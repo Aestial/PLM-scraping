@@ -10,11 +10,7 @@ class MedicinesSpider(scrapy.Spider):
         yield from response.follow_all(med_page_links, self.parse_med)
 
         pagination_links = response.css('ul.pagination-pages li.page-item a')
-        yield from response.follow_all(pagination_links, self.parse)
-        # for link in pagination_links:
-        #     yield {
-        #         'link' : link.get()
-        #     }        
+        yield from response.follow_all(pagination_links, self.parse)      
         
         letter_links = response.css('ul.pagination li.page-item a')
         yield from response.follow_all(letter_links, self.parse) 
