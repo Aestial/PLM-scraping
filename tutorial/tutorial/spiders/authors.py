@@ -7,12 +7,10 @@ class AuthorSpider(scrapy.Spider):
 
     def parse(self, response):
         author_page_links = response.css('.author + a')
-
         # for link in author_page_links:
         #     yield {
         #         "link": link.get()
         #     }
-
         yield from response.follow_all(author_page_links, self.parse_author)
 
         pagination_links = response.css('li.next a')
