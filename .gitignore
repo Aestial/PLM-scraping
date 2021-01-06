@@ -1,5 +1,5 @@
-/.venv
-
 *.jl
 *.json
 *.html
+
+/.venv
