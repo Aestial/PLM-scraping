@@ -1,12 +1,13 @@
 import json 
+import sys
 
-with open("medicines.jl") as f:
+with open(sys.argv[1]) as f:
     content = f.readlines()
 
 content = [json.loads(x.strip()) for x in content]
 
-output = sorted(content, key=lambda k: k['marca']) 
+output = sorted(content, key=lambda k: k[str(sys.argv[3])]) 
 
-with open('sorted-medicines.jl', 'w') as f:
+with open(sys.argv[2], 'w') as f:
     for item in output:
         f.write("%s\n" % item)
