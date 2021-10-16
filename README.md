@@ -17,7 +17,7 @@ Data scraping solution for the [PLM webpage](https://www.medicamentosplm.com) us
 1. Run the spider crawl:
 
         scrapy crawl {spider} -o {output_file}.jl
-
+---
 
 ## Helper scripts
 
@@ -25,4 +25,3 @@ Data scraping solution for the [PLM webpage](https://www.medicamentosplm.com) us
 
         python sort.py {input_file}.jl {output_file}.jl {field}
 
-        
